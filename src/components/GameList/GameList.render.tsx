@@ -1,13 +1,13 @@
 import React, { ReactElement } from "react"
 import { Game } from 'types'
-import { GameCard } from 'components/GameCard'
+import GameCard from 'components/GameCard'
 
 interface Props {
     err?: string,
     games: Game[]
 }
 
-const GameList = ({err, games}: Props): ReactElement => {
+const GameListRender = ({err, games}: Props): ReactElement => {
     if(err) {
         return (
             <p>
@@ -15,7 +15,7 @@ const GameList = ({err, games}: Props): ReactElement => {
             </p>
         )
     }
-    if (games?.length) {
+    if (!games?.length) {
         return (
             <p>
                 No Games Found
@@ -33,4 +33,4 @@ const GameList = ({err, games}: Props): ReactElement => {
     )
 }
 
-export default GameList
+export default GameListRender

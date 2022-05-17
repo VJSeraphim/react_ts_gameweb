@@ -25,6 +25,7 @@
     "paths": {
       "*" : ["node_nodules", "src/*"]
     },
+    "declaration": true,
     "isolatedModules": true,   
     "noEmit": true,
     "esModuleInterop": true,           

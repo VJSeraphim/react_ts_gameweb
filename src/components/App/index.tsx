@@ -6,9 +6,7 @@ import Home from 'components/Home'
 const App = ():ReactElement => (
     <BrowserRouter>
         <Routes>
-            <Route path="/">
-                <Home />
-            </Route>
+            <Route path="/" element={<Home/>} />
         </Routes>
     </BrowserRouter>
 )

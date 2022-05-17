@@ -1,9 +1,8 @@
 import React, { ReactElement } from "react"
+import GameList from "components/GameList"
 
 const Home = (): ReactElement => (
-    <div>
-        Home
-    </div>
+    <GameList />
 )
 
 export default Home
