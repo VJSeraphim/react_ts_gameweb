@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
-import { Link } from 'react-router-dom'
 import { Game } from 'types'
+import { StyledLink, Details, Img, Title, Description, Genre } from './styles'
 
 interface Props {
     content: Game
@@ -11,18 +11,21 @@ const GameCard = ({ content } : Props): ReactElement => {
     const link = `/game/${id}`
 
     return (
-        <Link to={link}>
-            <img src={thumbnail} alt={`${title} logo`} />
-            <h2>
-                {title}
-            </h2>
-            <p>
-                {short_description}
-            </p>
-            <p>
-                {genre}
-            </p>
-        </Link>
+        <StyledLink to={link}>
+            <Img src={thumbnail} alt={`${title} logo`} />
+            <Details>
+                <Title>
+                    {title}
+                </Title>
+                <Description>
+                    {short_description}
+                </Description>
+                <Genre>
+                    {genre}
+                </Genre>
+            </Details>
+
+        </StyledLink>
     )
 }
 

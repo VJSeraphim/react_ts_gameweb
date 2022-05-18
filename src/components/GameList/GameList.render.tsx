@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react"
 import { Game } from 'types'
+import { List, ListItem } from './styles'
 import GameCard from 'components/GameCard'
 
 interface Props {
@@ -23,13 +24,13 @@ const GameListRender = ({err, games}: Props): ReactElement => {
         )
     }
     return (
-        <ul>
+        <List>
             {games.map(game => (
-                <li key={game.id}>
+                <ListItem key={game.id}>
                     <GameCard content={game}/>
-                </li>
+                </ListItem>
             ))}
-        </ul>
+        </List>
     )
 }
 
