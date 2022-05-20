@@ -13,6 +13,10 @@ export const StyledLink = styled(Link)`
 
 export const Details = styled.div`
     padding: 20px;
+
+    @media (min-wioth: $(breakpoints.tablet)) {
+        white-space: nowrap;
+    }
 `
 
 export const Img = styled.img`
@@ -24,12 +28,20 @@ export const Title = styled.h2`
     font-size: 24px;
     font-weight: 510;
     color: ${primaryTextColor};
+    @media (min-wioth: $(breakpoints.tablet)) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
 `
 
 export const Description = styled.p`
     font-size: 16px;
     color: ${secondaryTextColor};
+    @media (min-wioth: $(breakpoints.tablet)) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
 `
 
@@ -43,4 +55,9 @@ export const Genre = styled.p`
     background-color: ${backgroundColor};
     float: right;
 
+`
+
+export const Icon = styled.img`
+    width: 20px;
+    height: 20px;
 `
