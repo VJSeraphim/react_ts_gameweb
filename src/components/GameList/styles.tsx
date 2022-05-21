@@ -9,7 +9,10 @@ export const List = styled.ul`
     box-sizing: border-box;
 
     @media (min-width : $(breakpoints.tablet)) {
-        max-width: $(breakpoints.tablet)
+        max-width: $(breakpoints.tablet);
+    }
+    @media (min-width : $(breakpoints.desktop)) {
+        max-width: $(breakpoints.desktop);
     }
 `
 
@@ -18,16 +21,24 @@ export const ListItem = styled.li`
     transition: all 0.2 ease-in-out;
 
     @:hover {
-        transform: scale(1.02)
+        transform: scale(1.02);
     }
 
     @media (min-width : $(breakpoints.tablet)) {
-        display:inline-block
+        display:inline-block;
         max-width: 332px;
         margin-right: 24px;
 
         &:nth-of-type(even) {
-            margin-right: 0
+            margin-right: 0;
+        }
+    }
+
+    @media (min-width : $(breakpoints.desktop)) {
+        max-width: 312px;
+
+        &:nth-of-type(even) {
+            margin-right: 24px;
         }
     }
 
