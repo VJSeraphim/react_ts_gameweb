@@ -1,14 +1,16 @@
-import React, { ReactElement } from "react"
+import React, { ReactElement, ChangeEvent } from "react"
 import { Game } from 'types'
 import { List, ListItem } from './styles'
 import GameCard from 'components/GameCard'
+import GameFilter from 'components/GameFilter'
 
 interface Props {
     err?: string,
-    games: Game[]
+    games: Game[],
+    onFilterChange: (e: ChangeEvent<HTMLFormElement>) => void
 }
 
-const GameListRender = ({err, games}: Props): ReactElement => {
+const GameListRender = ({err, games, onFilterChange}: Props): ReactElement => {
     if(err) {
         return (
             <p>
@@ -24,13 +26,17 @@ const GameListRender = ({err, games}: Props): ReactElement => {
         )
     }
     return (
-        <List>
-            {games.map(game => (
-                <ListItem key={game.id}>
-                    <GameCard content={game}/>
-                </ListItem>
-            ))}
-        </List>
+        <>
+            <GameFilter onChange={onFilterChange}/>
+            <List>
+                {games.map(game => (
+                    <ListItem key={game.id}>
+                        <GameCard content={game}/>
+                    </ListItem>
+                ))}
+            </List>
+        </>
+        
     )
 }
 
