@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import { Game } from 'types'
-import { StyledLink, Details, Img, Title, Description, Genre } from './styles'
+import { StyledLink, Details, Img, Title, Description, Genre, Icon } from './styles'
 import windowsIcon from 'assets/icons/windows.svg'
 import browserIcon from 'assets/icons/browser.svg'
 import { BROWSER, WINDOWS } from './constants'
@@ -16,10 +16,10 @@ const GameCard = ({ content } : Props): ReactElement => {
         let icon = null
         switch(p.trim()) {
             case BROWSER:
-                icon = <img key={`${id}-browser`} alt="browser icon" src={browserIcon}/>
+                icon = <Icon key={`${id}-browser`} alt="browser icon" src={browserIcon}/>
                 break
             case WINDOWS:
-                icon = <img key={`${id}-windows`} alt="Windows icon" src={windowsIcon}/>
+                icon = <Icon key={`${id}-windows`} alt="Windows icon" src={windowsIcon}/>
                 break
             default:
                 break
